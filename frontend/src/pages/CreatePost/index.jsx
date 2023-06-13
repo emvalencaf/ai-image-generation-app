@@ -28,9 +28,35 @@ const CreatePost = () => {
 
 
     // handle submit event
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if (form.prompt && form.photo) {
+            setIsLoading(true);
+
+            try {
+                const response = await fetch('http://localhost:8080/api/posts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(form),
+                });
+
+                await response.json();
+
+                navigate('/');
+
+            } catch (error) {
+                console.log(error);
+                alert(error.message);
+            } finally {
+                setIsLoading(false);
+            }
+    
+        } else {
+            alert('Please enter a prompt');
+        }
 
     }
 
@@ -72,7 +98,7 @@ const CreatePost = () => {
 
                 setForm({
                     ...form,
-                    photo: `data:image/jpeg;base64,${data.photo}`,
+                    photo: `data:image/jpeg;base64,${data}`,
                 });
             } catch (error) {
                 console.log(error);

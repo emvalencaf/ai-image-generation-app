@@ -1,5 +1,5 @@
 // react deps
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // customs components
 import { FormField, Hero, Loader, SectionContainer } from "../../components";
@@ -7,11 +7,41 @@ import RenderCards from "../../components/RenderCards";
 
 const Home = () => {
     // fetching posts states
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [allPosts, setAllPosts] = useState(null);
 
     // searching states
     const [searchText, setSearchText] = useState();
+
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            setIsLoading(true);
+
+            try {
+                const response = await fetch('http://localhost:8080/api/posts', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+
+                    setAllPosts(result.data.reverse());
+                }
+
+            } catch (error) {
+
+            } finally {
+                setIsLoading(false);
+            }
+
+        };
+
+        fetchPosts();
+    }, []);
 
     return (
         <SectionContainer
@@ -25,7 +55,7 @@ const Home = () => {
             </div>
             <div className="mt-10">
                 {
-                    loading ? (
+                    isLoading ? (
                         <div
                             className="flex justify-center items-center"
                         >
@@ -50,7 +80,7 @@ const Home = () => {
                                             />
                                         ):(
                                             <RenderCards
-                                                data={[]}
+                                                data={allPosts}
                                                 title="No postsfound"
                                             />
                                         )}
