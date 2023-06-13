@@ -10,15 +10,22 @@ const generateImage = async (req, res) => {
 
         const image = await dallEService.generateImage(prompt);
 
-        if (!image) res.status(500).send('server could not generate a image');
+        if (!image) res.status(500).json({
+            success: false,
+            message: 'server could not generate a image',
+        });
 
         res.status(200).json({
-            photo: image,
-        })
+            success: true,
+            data: image,
+        });
 
     } catch (error) {
         console.log(error.response.data.error.message);
-        res.status(500).send(error?.response?.data?.error?.message);
+        res.status(500).send({
+            success: false,
+            message: error?.response?.data?.error?.message || 'server internal error',
+        });
     }
 }
 
