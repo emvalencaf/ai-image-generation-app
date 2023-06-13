@@ -55,7 +55,7 @@ const CreatePost = () => {
             }
     
         } else {
-            alert('Please enter a prompt');
+            alert('Please enter a prompt or generate an image');
         }
 
     }
@@ -64,7 +64,7 @@ const CreatePost = () => {
     const handleChange = (event) => {
         setForm({
             ...form,
-            [e.target.name]: e.target.value,
+            [event.target.name]: event.target.value,
         });
     };
 
@@ -96,12 +96,16 @@ const CreatePost = () => {
 
                 const data = await response.json();
 
+                if (!data.success) return alert(data.message);
+
                 setForm({
                     ...form,
                     photo: `data:image/jpeg;base64,${data}`,
                 });
+
             } catch (error) {
                 console.log(error);
+            } finally {
                 setIsGeneratingImg(false);
             }
         } else {

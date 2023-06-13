@@ -31,6 +31,11 @@ const create = async (req, res) => {
     try {
         const { name, prompt, photo } = req.body;
 
+        if (!photo) return res.status(400).json({
+            success: false,
+            message: 'bad request',
+        });
+
         const photoUrl = await cloudinaryService.uploadImage(photo);
 
         const newPost = await postService.createPost({
