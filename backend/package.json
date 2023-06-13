@@ -1,0 +1,29 @@
+{
+  "name": "api-ai-image-generation-app",
+  "version": "1.0.0",
+  "description": "An API that generates images powered by OpenAI's DALL-E API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "test"
+  },
+  "keywords": [
+    "openai",
+    "ai",
+    "ai-generating-images"
+  ],
+  "author": "Edson Mota Valença Filho",
+  "license": "MIT",
+  "dependencies": {
+    "cloudinary": "^1.37.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.4",
+    "openai": "^3.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
