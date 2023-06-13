@@ -8,6 +8,8 @@ app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 
 // router
+const router = require('./routes');
+app.use(router);
 
 // routes
 app.get('/', (req, res) => {
