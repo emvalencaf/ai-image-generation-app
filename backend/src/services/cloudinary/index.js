@@ -1,4 +1,4 @@
-import { cloudinaryApi } from "../../cloudinary";
+const { cloudinaryApi } = require("../../cloudinary");
 
 const uploadImage = async (photo) => cloudinaryApi.upload(photo);
 

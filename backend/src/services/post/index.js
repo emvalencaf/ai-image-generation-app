@@ -1,12 +1,15 @@
 // models
-import { PostModel } from '../../models';
+const { PostModel } = require('../../models');
 
-const createPost = async ({ name, prompt, photoUrl }) => PostModel.create({
+const create = async ({ name, prompt, photoUrl }) => PostModel.create({
     name,
     prompt,
     photo: photoUrl.url,
 });
 
+const getAll = async () => PostModel.find({});
+
 module.exports = {
-    createPost,
+    create,
+    getAll,
 };
