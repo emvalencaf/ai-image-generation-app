@@ -1,5 +1,6 @@
-const postModel = require('./post');
+const PostModel = require('./post');
+
 
 module.exports = {
-    postModel,
+    PostModel,
 }
