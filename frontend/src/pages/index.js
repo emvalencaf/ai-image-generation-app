@@ -1,5 +1,5 @@
-import Home from "./create-post";
-import CreatePost from "./create-post";
+import Home from "./Home";
+import CreatePost from "./CreatePost";
 
 export {
     CreatePost,
