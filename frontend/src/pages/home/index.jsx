@@ -31,6 +31,8 @@ const Home = () => {
                 if (response.ok) {
                     const result = await response.json();
 
+                    console.log(result.data);
+
                     setAllPosts(result.data.reverse());
                 }
 
@@ -96,21 +98,21 @@ const Home = () => {
                                             {searchText}
                                         </span>
                                     </h2>
-                                    <div className="grid lg:grid-cools-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
-                                        {searchText ? (
-                                            <RenderCards
-                                                data={searchedResults}
-                                                title="No search results found"
-                                            />
-                                        ) : (
-                                            <RenderCards
-                                                data={allPosts}
-                                                title="No postsfound"
-                                            />
-                                        )}
-                                    </div>
                                 </>
                             )}
+                            <div className="grid lg:grid-cools-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
+                                {searchText ? (
+                                    <RenderCards
+                                        data={searchedResults}
+                                        title="No search results found"
+                                    />
+                                ) : (
+                                    <RenderCards
+                                        data={allPosts}
+                                        title="No postsfound"
+                                    />
+                                )}
+                            </div>
                         </>
                     )
                 }

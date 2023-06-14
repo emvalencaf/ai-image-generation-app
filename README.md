@@ -1,6 +1,6 @@
 # AI IMAGE GENERATION APP (FULL STACK)
 
-These web-app can be use to create new images (powered by DALL-E API) by using promps input by the user or sort at our webapp and also to share the created image in our gallery. The main goal of the app was to clone (OpenAI's DALL-E web-app)[https://labs.openai.com/].
+These web-app can be use to create new images (powered by DALL-E API) by using promps input by the user or sort at our webapp and also to share the created image in our gallery. The main goal of the app was to clone [OpenAI's DALL-E web-app](https://labs.openai.com/).
 
 ## FEATURES
 -[X] Navigate between the main page (homepage) and create page;
@@ -37,4 +37,4 @@ export const apiURL = ''; // INSERT THE BACKEND'S URL OR THE PORT RUNNING THE SE
 ```
 6. At both terminals type: ``npm run dev`` or ``npm start``;
 
-## (DEMO)[]
+## [DEMO]()

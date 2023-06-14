@@ -38,7 +38,7 @@ const create = async (req, res) => {
 
         const photoUrl = await cloudinaryService.uploadImage(photo);
 
-        const newPost = await postService.createPost({
+        const newPost = await postService.create({
             name,
             prompt,
             photoUrl,
