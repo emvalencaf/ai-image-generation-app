@@ -10,6 +10,8 @@ import { getRandomPrompt } from '../../utils';
 
 // assets
 import { preview } from '../../assets';
+
+// config api url
 import { apiURL } from '../../config/api';
 
 const CreatePost = () => {
@@ -36,7 +38,7 @@ const CreatePost = () => {
             setIsLoading(true);
 
             try {
-                const response = await fetch('http://localhost:8080/api/posts', {
+                const response = await fetch(`${apiURL}/posts`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
