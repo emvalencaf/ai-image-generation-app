@@ -1,1 +1,2 @@
-export const apiURL = `http://localhost:8080/api`; // INSERT THE BACKEND'S URL OR THE PORT RUNNING THE SERVER AT LOCALHOST
+// export const apiURL = `http://localhost:8080/api`; // INSERT THE BACKEND'S URL OR THE PORT RUNNING THE SERVER AT LOCALHOST
+export const apiURL = `https://api-ai-image-generation-app.onrender.com/api`;
