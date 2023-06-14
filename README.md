@@ -3,12 +3,12 @@
 These web-app can be use to create new images (powered by DALL-E API) by using promps input by the user or sort at our webapp and also to share the created image in our gallery. The main goal of the app was to clone (OpenAI's DALL-E web-app)[https://labs.openai.com/].
 
 ## FEATURES
--[X] Navigate between the main page (homepage) and create page;
--[x] Create a new image by sorting promps from these webapp (by clicking on the surprise me button at the create page);
--[x] Create a new image by inputing your own promps;
--[x] Share a new image made by the user;
--[x] Fetch images (also who made and what promps has been used) to show in a gallery at the main page;
--[x] Filter the images in the main's page gallery;
+- [x] Navigate between the main page (homepage) and create page;
+- [x] Create a new image by sorting promps from these webapp (by clicking on the surprise me button at the create page);
+- [x] Create a new image by inputing your own promps;
+- [x] Share a new image made by the user;
+- [x] Fetch images (also who made and what promps has been used) to show in a gallery at the main page;
+- [x] Filter the images in the main's page gallery;
 
 ## ABOUT THE TECHNOLOGIES
 
