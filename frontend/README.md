@@ -37,4 +37,6 @@ CLOUDINARY_API_SECRET=
 export const apiURL = ''; // INSERT THE BACKEND'S URL OR THE PORT RUNNING THE SERVER AT LOCALHOST
 ```
 6. At both terminals type: ``npm run dev`` or ``npm start``;
-## (DEMO)[]
+
+
+## (FULL STACK DEMO)[https://64891e8d3c3a3f48d86403a7--gorgeous-piroshki-1692d0.netlify.app/]
