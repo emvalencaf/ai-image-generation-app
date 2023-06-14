@@ -17,6 +17,6 @@ router.get('/', getAll);
 router.post('/', create);
 
 // testing route
-router.get('/', (req, res) => res.send('Post routes is working...'));
+router.get('/testing', (req, res) => res.send('Post routes is working...'));
 
 module.exports = router;

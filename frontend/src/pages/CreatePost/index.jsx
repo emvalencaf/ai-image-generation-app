@@ -10,6 +10,7 @@ import { getRandomPrompt } from '../../utils';
 
 // assets
 import { preview } from '../../assets';
+import { apiURL } from '../../config/api';
 
 const CreatePost = () => {
     // state for navigate
@@ -84,7 +85,7 @@ const CreatePost = () => {
             try {
                 setIsGeneratingImg(true);
                 
-                const response = await fetch('http://localhost:8080/api/dall-e/', {
+                const response = await fetch(`${apiURL}/dall-e`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

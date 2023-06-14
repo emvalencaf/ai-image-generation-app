@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 // customs components
 import { FormField, Hero, Loader, SectionContainer } from "../../components";
 import RenderCards from "../../components/RenderCards";
+import { apiURL } from "../../config/api";
 
 const Home = () => {
     // fetching posts states
@@ -20,7 +21,7 @@ const Home = () => {
             setIsLoading(true);
 
             try {
-                const response = await fetch('http://localhost:8080/api/posts', {
+                const response = await fetch(`${apiURL}/posts`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -54,7 +55,7 @@ const Home = () => {
             setTimeout(() => {
                 const results = allPosts.filter((item) => item.name.toLowerCase().includes(searchText.toLowerCase()) || item.prompt.toLowerCase().includes(searchText.toLowerCase()));
 
-                setSearchText(results);
+                setSearchedResults(results);
             }, 500)
         );
     }
